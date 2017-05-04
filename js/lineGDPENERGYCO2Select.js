@@ -151,7 +151,7 @@ function lineGDPTPESCO2(id, country, w, h) {
      svgLineChart.append("path")
         .datum(data.filter(function(d) { return d; }))
         .attr("fill", "None")
-        .attr("stroke", '#c7eae5')
+        .attr("stroke", '#01665e')
         .attr("stroke-width", 2)
         .attr("d", lineCO2);
 
@@ -284,7 +284,7 @@ function lineGDPTPESCO2(id, country, w, h) {
      svgLineChart.append("path")
         .datum(data.filter(function(d) { return d; }))
         .attr("fill", "None")
-        .attr("stroke", '#c7eae5')
+        .attr("stroke", '#01665e')
         .attr("stroke-width", 2)
         .attr("d", lineCO2CAPITA);
 
