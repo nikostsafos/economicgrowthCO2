@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<meta charset="utf>8">
+
+  <head>
+    <title>Economic Growth Without CO2 Emissions?</title>
+    <meta property='og:title' content='Economic Growth Without CO2 Emissions?'/>
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content='https://nikostsafos.github.io/economicgrowthCO2/' />
+    <meta property="og:image" content="img/cover.png" />
+    <meta name = 'viewport' content = 'width=device-width, initial-scale = 1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/topojson.v2.min.js"></script>
+    <script src = 'https://code.jquery.com/jquery-3.2.0.min.js'></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-96571529-3', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  
+  <body>
+  
+    <nav><p>Economic Growth Without CO<sub>2</sub> Emissions? | by Nikos Tsafos</p></nav>
+    <header><h1>Economic Growth Without CO<sub>2</sub> Emissions?</h1>
+            <h2>by Nikos Tsafos <script type="IN/MemberProfile" data-format="hover" data-id="https://www.linkedin.com/in/nikos-tsafos-b7025212" data-related="false"></script></h2>
+            <h3>May 2017</h3>
+    </header>
+
+    <div id = 'content'>
+
+    <hr><h2>Introduction</h2><hr>
+
+    <p>We need energy to survive&mdash;to light, heat and cool our homes and offices; to preserve and cook food; to transport goods across continents and oceans; to erect structures and build things; to feed animals and extract materials from the earth; to communicate with one another; to play; to live. But what, exactly, is the relationship between incomes and energy consumption? Can we grow an economy without consuming more energy&mdash;more importantly, is economic growth possible without emitting more CO<sub>2</sub> into the atmosphere?</p>
+   	
+    <hr><h2>Income, energy and CO<sub>2</sub> emissions: A global view<hr></h2>
+
+    <p>At a global level, incomes are linked to energy consumption and CO<sub>2</sub> emissions, but the relationship is not one-to-one. World gross domestic product has almost doubled since 1990 (+93%), but energy consumption has increased but just 56%; CO<sub>2</sub> emissions from fuel combustion have increased by 58%. In short, incomes grew faster than energy consumption and CO<sub>2</sub> emissions, but rising incomes have still meant rising energy use and emissions.</p>
+
+    <p>On a per capita basis, the numbers look a bit different: income is up ~40% since 1990, but energy consumption is just 14% higher&mdash;meaning that the average person on earth consumed only 14% more energy in 2014 than in 1990. In some respects, that's remarkable given the dramatic advances in living standards across the world and the proliferation of new, energy-consuming machines (like computers and smartphones). Even so, the big picture is hardly reassuring that growth is possible without additional energy use and CO<sub>2</sub> emissions.</p>
+
+        <table>
+      <tr>
+        <th id = 'tableHead' colspan="7">World population, income, energy consumption and CO<sub>2</sub> emissions (1990=100)</th>
+      </tr>
+      <tr class = 'greyHeader'>
+        <th class = 'rowLeft'>Variable</th>
+        <th class = 'greyHeaderTwo'>1971</th>
+        <th class = 'greyHeaderTwo'>1980</th>
+        <th class = 'greyHeaderTwo'>1990</th>
+        <th class = 'greyHeaderTwo'>2000</th>
+        <th class = 'greyHeaderTwo'>2010</th>
+        <th class = 'greyHeaderTwo'>2014</th>
+      </tr>
+
+      <tr>
+        <td class = 'rowLeft'>Population</td>
+        <td>71.2</td>
+        <td>84.0</td>
+        <td>100</td>
+        <td>115.7</td>
+        <td>131.0</td>
+        <td>137.3</td>
+      </tr>
+      
+      <tr>
+        <td class = 'rowLeft'>Gross domestic product</td>
+        <td>53.0</td>
+        <td>74.4</td>
+        <td>100</td>
+        <td>131.3</td>
+        <td>173.9</td>
+        <td>193.2</td>
+      </tr>
+      
+      <tr>
+        <td class = 'rowLeft'>Gross domestic product per capita</td>
+        <td>74.4</td>
+        <td>88.6</td>
+        <td>100</td>
+        <td>113.4</td>
+        <td>132.8</td>
+        <td>140.7</td>
+      </tr>
+      
+      <tr>
+        <td class = 'rowLeft'>Energy consumption</td>
+        <td>63.0</td>
+        <td>82.1</td>
+        <td>100</td>
+        <td>114.4</td>
+        <td>147.6</td>
+        <td>156.2</td>
+      </tr>
+
+      <tr>
+        <td class = 'rowLeft'>Energy consumption per capita</td>
+        <td>88.4</td>
+        <td>97.7</td>
+        <td>100</td>
+        <td>98.9</td>
+        <td>112.7</td>
+        <td>113.7</td>
+      </tr>
+
+      <tr>
+        <td class = 'rowLeft'>CO2 emissions</td>
+        <td>68.0</td>
+        <td>86.4</td>
+        <td>100</td>
+        <td>112.9</td>
+        <td>148.5</td>
+        <td>157.9</td>
+      </tr>
+
+      <tr class = 'bottomRow'>
+        <td class = 'rowLeft'>CO2 emissions per capita</td>
+        <td>95.5</td>
+        <td>102.8</td>
+        <td>100</td>
+        <td>97.5</td>
+        <td>113.4</td>
+        <td>115.0</td>
+      </tr>
+
+    </table>
+    <p class = 'graphFootnote'>Source: International Energy Agency, CO2 Emissions from Fuel Combustion (2016 Edition). GDP is measured in constant 2005 dollars ($2005), energy consumption in tons of oil equivalent (toe), and CO2 emissions are from fuel combustion only and are measured in tons of CO2 equivalent.</p>
+
+    <hr><h2>Income vs. CO<sub>2</sub> emissions: A static view</h2><hr>
+
+    <p>Richer countries have higher CO<sub>2</sub> emissions&mdash;but the relationship is not linear. Countries at similar income levels can have vastly different CO<sub>2</sub> footprints. Take Switzerland and Qatar: similar incomes (~$75k per capita), but Qatar emits almost 8x more CO<sub>2</sub> per capita than Switzerland. Or Portugal and Bahrain: similar incomes (~$22k per capita), but Bahrain emits almost 4x more CO<sub>2</sub> per capita than Portugal. Or Panama and Curacao: similar incomes (~$10-12k per capita), but Curacao emits 11x more CO<sub>2</sub> per capita than Panama. Or Switzerland and Portugal: Switzerland emits 12% more CO<sub>2</sub>, but its income is 3.5x higher. Or Luxembourg and Trinidad and Tobago: similar CO<sub>2</sub> emissions (~16 tons per capita) but incomes are 6.4x higher in Luxembourg. Income does not predict CO<sub>2</sub> emissions.</p>
+    
+    <div class = 'graphic' id = 'scatterGDPCO2CAPITA'>
+      <script src='js/scatterPlots.js'></script>
+    </div>
+    <div class = 'graphLegend'>
+      <ul>
+          <li style='color: #8c510a'>Asia</li>
+          <li style='color: #d8b365'>Africa</li>
+          <li style='color: #f6e8c3'>OECD</li>
+          <li style='color: #c7eae5'>Middle East</li>
+          <li style='color: #5ab4ac'>Non-OECD Americas</li>
+          <li style='color: #01665e'>Non-OECD Europe and Eurasia</li>
+      </ul>
+    </div>
+    <p class = 'graphFootnote'>Source: International Energy Agency, CO2 Emissions from Fuel Combustion (2016 Edition). GDP is measured in constant 2005 dollars ($2005) and CO2 emissions are from fuel combustion only and are measured in tons of CO2 equivalent.</p>
+
+    <p>Why not? First, countries use different amounts of energy. Their economies may be different: one might rely on heavy industry, another on services. Or their climate may be different: cold countries use energy for heat, warmer countries use energy for cooling. Or their energy prices may be different: some produce energy, others import it; some tax energy, others subsidize it. Or their capital stock may be different: machines may be newer or buildings older. Or their policies may be different: governments may have energy efficiency mandates or they may not. These differences affect energy consumption. Take Malta and Bahrain: similar incomes (~$20k per capita), but Bahrain consumes 5x more energy per capita as Malta. Or Uruguay and Trinidad and Tobago: similar incomes ($14-16K per capita), but Trinidad consumes 9x more energy per capita than Uruguay. Income, alone, is a poor predictor of energy consumption.</p>
+
+    <div class = 'graphic' id = 'scatterGDPENERGYCAPITA'>
+      <script src='js/scatterPlots.js'></script>
+    </div>
+    <div class = 'graphLegend'>
+      <ul>
+          <li style='color: #8c510a'>Asia</li>
+          <li style='color: #d8b365'>Africa</li>
+          <li style='color: #f6e8c3'>OECD</li>
+          <li style='color: #c7eae5'>Middle East</li>
+          <li style='color: #5ab4ac'>Non-OECD Americas</li>
+          <li style='color: #01665e'>Non-OECD Europe and Eurasia</li>
+      </ul>
+    </div>
+    <p class = 'graphFootnote'>Source: International Energy Agency, CO2 Emissions from Fuel Combustion (2016 Edition). GDP is measured in constant 2005 dollars ($2005), energy consumption in tons of oil equivalent (toe), and CO2 emissions are from fuel combustion only and are measured in tons of CO2 equivalent.</p>
+    
+    <p>Second, countries generate their energy in different ways. Fossil fuels such as coal, oil and natural gas emit more CO<sub>2</sub> than hydro, nuclear power, wind or solar. Qatar and Iceland consume similar amounts of energy (20 vs. 18 tons of oil equivalent, or toe, per capita), but CO<sub>2</sub> emissions are 5x higher in Qatar. Qatar uses oil and gas; Iceland uses hydro and geothermal energy. Australia consumes slightly (7%) more energy per capita than Sweden, but its emissions are over 4x higher. Germany's emissions are 2x higher than France's, even though the two countries consume similar amounts of energy. Not even energy consumption, on its own, predicts CO<sub>2</sub> emissions.</p>
+
+    <hr><h2>Income vs. CO<sub>2</sub> emissions: A dynamic view</h2><hr>
+
+    <p>So far, we have looked only at 2014 data. Maybe countries end up at different places. But can an economy grow without more energy? Or without more CO<sub>2</sub> emissions? The evidence is clearly yes, but it is not a given. There are many different paths&mdash;in fact, eight distinct paths: 
+
+      <ol class='countryList'>
+          <li>Turkey: GDP, energy consumption and CO<sub>2</sub> emissions are closely linked. Not perfectly overlapping, but close.</li>
+          <li>Australia: Income at some point delinks from energy use and CO<sub>2</sub> emissions.</li>
+          <li>Russia: GDP grows but energy use and emissions do not, largely because of continued efficiency gains.</li>
+          <li>Germany: CO<sub>2</sub> emissions fall faster than energy use, usually as countries turn to natural gas or nuclear power.</li>
+          <li>United Kingdom: No clear link between GDP, energy and CO<sub>2</sub> emissions: incomes grow faster than energy or emissions.</li>
+          <li>China: Income, energy use and emissions grow, but unequally: incomes are up 10x (vs. 1990), energy use 3x, and CO<sub>2</sub> emissions 4x.</li>
+          <li>Iran: Energy use and CO<sub>2</sub> emissions growing faster than incomes&mdash;energy-dependent growth models without commensurate growth.</li>
+          <li>Bangladesh: Growth in CO<sub>2</sub> outpaces energy use or incomes, as countries replace traditional (e.g. biomass) with fossil fuels.</li>
+      </ol>
+
+    <h3>GDP, energy consumption and CO<sub>2</sub> emissions</h3>
+        <div class = 'graphic' id = 'lineGDPENERGYCO2'>
+            <script src='js/lineGDPENERGYCO2.js'></script>
+        </div>
+        <div class = 'graphLegend'>
+            <ul>
+                <li style='color: #8c510a'>Gross domestic product</li>
+                <li style='color: #d8b365'>Energy use</li>
+                <li style='color: #01665e'>CO2 emissions</li>
+            </ul>
+        </div>
+    <p class = 'graphFootnote'>Source: International Energy Agency, CO2 Emissions from Fuel Combustion (2016 Edition). GDP is measured in constant 2005 dollars ($2005), energy consumption in tons of oil equivalent (toe), and CO2 emissions are from fuel combustion only and are measured in tons of CO2 equivalent.</p>
+    
+    <p>In sum: there is no reason to think that economic growth equals more energy consumption. Or that more energy consumption must equal more CO<sub>2</sub> emissions. Or that a pattern we have observed so far will hold into the future. Consider the following data points. In the United States home energy use per household has declined by 27% since 1972&mdash;Americans have gotten bigger houses and more gadgets while consuming 27% less energy than they did 45 years ago. In the United Kingdom, the chemical industry used 84% less energy per unit produced relative to what it did in 1970. 84%! In fact, in 2014, the United Kingdom consumed less energy that at any point in the past 50 years&mdash;not on a per capita basis, but on an absolute basis. There is really no reason to think growth cannot occur alongside declines in energy consumption. We have so many different trajectories around the world and throughout history&mdash;you can explore for yourself individual trajectories in the appendix below.</p>
+
+    <hr><h2>Living standards rising; CO<sub>2</sub> emissions, less so</h2><hr>
+    
+    <p>Let's step back and look at the big picture. Most countries continue to grow: in 101 countries, real GDP per capita was either at its highest level or just below its peak (peak occurred in 2008-2013). There are also a few countries where per capita GDP peaked before 1990. That's because of war, revolution or economic stagnation, the last often linked to mismanagement of natural resources. Finally, there are countries where per capita incomes have stagnated, peaking after 1990 but before 2007 (21 countries), many of them in Europe.</p>
+
+    <h3>Year of peak GDP per capita</h3>
+        <div class = 'graphic' id = 'mapGDPCAPITA'>
+            <script src='js/maps.js'></script>
+        </div>
+        <div class = 'graphLegend'>
+            <ul>
+                <li style='color: #8c510a'>Before 1990</li>
+                <li style='color: #d8b365'>From 1990 to 1999</li>
+                <li style='color: #c7eae5'>From 2000 to 2007</li>
+                <li style='color: #5ab4ac'>From 2008 to 2013</li>
+                <li style='color: #01665e'>Highest was 2014</li>
+            </ul>
+        </div>
+    <p class = 'graphFootnote'>Source: International Energy Agency, CO2 Emissions from Fuel Combustion (2016 Edition). GDP is measured in constant 2005 dollars ($2005).</p>
+
+    <p>Per capita CO<sub>2</sub> emissions show a dramatically different pattern. In 30 countries, they peaked before 1990. This is in Europe, North America and parts of Africa (largely due to war). In the Former Soviet Union, energy consumption and CO<sub>2</sub> emissions have been declining since 1990, often at rapid rates. Per capita emissions are rising mostly in Asia and Latin America, as well as parts of Africa (36 countries in total). In all other places, emissions peaked either recently (25 countries in 2008-2013), or a long time ago.</p>
+
+    <h3>Year of peak CO<sub>2</sub> emissions per capita</h3>
+        <div class = 'graphic' id = 'mapCO2CAPITA'>
+            <script src='js/maps.js'></script>
+        </div>
+        <div class = 'graphLegend'>
+            <ul>
+                <li style='color: #8c510a'>Before 1990</li>
+                <li style='color: #d8b365'>From 1990 to 1999</li>
+                <li style='color: #c7eae5'>From 2000 to 2007</li>
+                <li style='color: #5ab4ac'>From 2008 to 2013</li>
+                <li style='color: #01665e'>Highest was 2014</li>
+            </ul>
+        </div>
+    <p class = 'graphFootnote'>Source: International Energy Agency, CO2 Emissions from Fuel Combustion (2016 Edition). CO2 emissions are from fuel combustion only and are measured in tons of CO2 equivalent. </p>
+    
+    <p>What does all this mean? We know that the link between incomes and CO<sub>2</sub> emissions is far from linear. We have so many countries that have grown without using more energy and/or emitting more CO<sub>2</sub>. Not all countries are equal, of course: the growth in China and India can overwhelm what happens in many other countries. Yet the broad picture is clear: so many countries where GDP per capita is growing while emissions are not.</p>
+
+    <hr><h2>Appendix</h2><hr>
+
+    <div class = 'menu' align = 'center'>
+        <select id="countrySelect" name="countrySelect">
+                <option value="Albania">Albania</option>
+                <option value="Algeria">Algeria</option>
+                <option value="Angola">Angola</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Armenia">Armenia</option>
+                <option value="Australia">Australia</option>
+                <option value="Austria">Austria</option>
+                <option value="Azerbaijan">Azerbaijan</option>
+                <option value="Bahrain">Bahrain</option>
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="Belarus">Belarus</option>
+                <option value="Belgium">Belgium</option>
+                <option value="Benin">Benin</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
+                <option value="Botswana">Botswana</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Brunei">Brunei</option>
+                <option value="Bulgaria">Bulgaria</option>
+                <option value="Cambodia">Cambodia</option>
+                <option value="Cameroon">Cameroon</option>
+                <option value="Canada">Canada</option>
+                <option value="Chile">Chile</option>
+                <option value="China">China</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Congo">Congo</option>
+                <option value="Costa Rica">Costa Rica</option>
+                <option value="Cote d'Ivoire">Cote d'Ivoire</option>
+                <option value="Croatia">Croatia</option>
+                <option value="Cuba">Cuba</option>
+                <option value="Curacao">Curacao</option>
+                <option value="Cyprus">Cyprus</option>
+                <option value="Czech Republic">Czech Republic</option>
+                <option value="Denmark">Denmark</option>
+                <option value="Dominican Republic">Dominican Republic</option>
+                <option value="DR Congo">DR Congo</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Egypt">Egypt</option>
+                <option value="El Salvador">El Salvador</option>
+                <option value="Eritrea">Eritrea</option>
+                <option value="Estonia">Estonia</option>
+                <option value="Ethiopia">Ethiopia</option>
+                <option value="Finland">Finland</option>
+                <option value="France">France</option>
+                <option value="Gabon">Gabon</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Germany">Germany</option>
+                <option value="Ghana">Ghana</option>
+                <option value="Gibraltar">Gibraltar</option>
+                <option value="Greece">Greece</option>
+                <option value="Guatemala">Guatemala</option>
+                <option value="Haiti">Haiti</option>
+                <option value="Honduras">Honduras</option>
+                <option value="Hong Kong">Hong Kong</option>
+                <option value="Hungary">Hungary</option>
+                <option value="Iceland">Iceland</option>
+                <option value="India">India</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Iran">Iran</option>
+                <option value="Iraq">Iraq</option>
+                <option value="Ireland">Ireland</option>
+                <option value="Israel">Israel</option>
+                <option value="Italy">Italy</option>
+                <option value="Jamaica">Jamaica</option>
+                <option value="Japan">Japan</option>
+                <option value="Jordan">Jordan</option>
+                <option value="Kazakhstan">Kazakhstan</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Kosovo">Kosovo</option>
+                <option value="Kuwait">Kuwait</option>
+                <option value="Kyrgyzstan">Kyrgyzstan</option>
+                <option value="Latvia">Latvia</option>
+                <option value="Lebanon">Lebanon</option>
+                <option value="Libya">Libya</option>
+                <option value="Lithuania">Lithuania</option>
+                <option value="Luxembourg">Luxembourg</option>
+                <option value="Macedonia, FYR of">Macedonia, FYR of</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="Malta">Malta</option>
+                <option value="Mauritius">Mauritius</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Moldova">Moldova</option>
+                <option value="Mongolia">Mongolia</option>
+                <option value="Montenegro">Montenegro</option>
+                <option value="Morocco">Morocco</option>
+                <option value="Mozambique">Mozambique</option>
+                <option value="Myanmar">Myanmar</option>
+                <option value="Namibia">Namibia</option>
+                <option value="Nepal">Nepal</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="Nicaragua">Nicaragua</option>
+                <option value="Niger">Niger</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="North Korea">North Korea</option>
+                <option value="Norway">Norway</option>
+                <option value="Oman">Oman</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="Panama">Panama</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Peru">Peru</option>
+                <option value="Philippines">Philippines</option>
+                <option value="Poland">Poland</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Qatar">Qatar</option>
+                <option value="Romania">Romania</option>
+                <option value="Russia">Russia</option>
+                <option value="Saudi Arabia">Saudi Arabia</option>
+                <option value="Senegal">Senegal</option>
+                <option value="Serbia">Serbia</option>
+                <option value="Singapore">Singapore</option>
+                <option value="Slovakia">Slovakia</option>
+                <option value="Slovenia">Slovenia</option>
+                <option value="South Africa">South Africa</option>
+                <option value="South Korea">South Korea</option>
+                <option value="South Sudan">South Sudan</option>
+                <option value="Spain">Spain</option>
+                <option value="Sri Lanka">Sri Lanka</option>
+                <option value="Sudan">Sudan</option>
+                <option value="Suriname">Suriname</option>
+                <option value="Sweden">Sweden</option>
+                <option value="Switzerland">Switzerland</option>
+                <option value="Syria">Syria</option>
+                <option value="Taiwan">Taiwan</option>
+                <option value="Tajikistan">Tajikistan</option>
+                <option value="Tanzania">Tanzania</option>
+                <option value="Thailand">Thailand</option>
+                <option value="Togo">Togo</option>
+                <option value="Trinidad">Trinidad</option>
+                <option value="Tunisia">Tunisia</option>
+                <option value="Turkey">Turkey</option>
+                <option value="Turkmenistan">Turkmenistan</option>
+                <option value="UAE">UAE</option>
+                <option value="Ukraine">Ukraine</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="United States">United States</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="Uzbekistan">Uzbekistan</option>
+                <option value="Venezuela">Venezuela</option>
+                <option value="Vietnam">Vietnam</option>
+                <option value="Yemen">Yemen</option>
+                <option value="Zambia">Zambia</option>
+                <option value="Zimbabwe">Zimbabwe</option>
+            </select>
+            </div>
+
+        <div class="tab-panel active" id="tab-1">
+        <h3>GDP, energy consumption, CO<sub>2</sub> emissions</h3>
+        <div id = 'gdpTPESCO2'></div>
+        <script src='js/lineGDPENERGYCO2Select.js'> </script>
+            <div class = 'graphLegend'>
+            <ul>
+                <li style='color: #8c510a'>Gross domestic product</li>
+                <li style='color: #d8b365'>Energy use</li>
+                <li style='color: #01665e'>CO2 emissions</li>
+            </ul>
+            </div>
+                <p class = 'graphFootnote'>Source: International Energy Agency, CO2 Emissions from Fuel Combustion (2016 Edition)</p>
+        </div>
+
+    <hr><h2>Notes</h2><hr>
+    
+    <p>All data from the International Energy Agency, CO2 Emissions from Fuel Combustion (2016 Edition). GDP is measured in constant 2005 dollars ($2005), energy consumption in tons of oil equivalent (toe), and CO<sub>2</sub> emissions are from fuel combustion only and are measured in tons of CO<sub>2</sub> equivalent. For more information, please visit my <a href='https://github.com/nikostsafos/economicgrowthCO2' target = '_blank'>GitHub</a> repository.</p>
+      	
+    <p class = 'graphFootnote'><a href="https://twitter.com/ntsafos" class="twitter-follow-button" data-show-count="false">Follow @ntsafos</a></p>
+      
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>    
+  	</div>
+  </body>
+
