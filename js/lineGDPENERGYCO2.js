@@ -12,7 +12,7 @@ var yHeight = contentWidth / plotRow;
 lineGDPENERGYCO2('#lineGDPENERGYCO2', 'Turkey', xWidth, xWidth);
 lineGDPENERGYCO2('#lineGDPENERGYCO2', 'Australia', xWidth, xWidth);
 lineGDPENERGYCO2('#lineGDPENERGYCO2', 'Russia', xWidth, xWidth);
-lineGDPENERGYCO2('#lineGDPENERGYCO2', 'Germany', xWidth, xWidth);
+lineGDPENERGYCO2('#lineGDPENERGYCO2', 'France', xWidth, xWidth);
 lineGDPENERGYCO2('#lineGDPENERGYCO2', 'United Kingdom', xWidth, xWidth);
 lineGDPENERGYCO2('#lineGDPENERGYCO2', 'China', xWidth, xWidth);
 lineGDPENERGYCO2('#lineGDPENERGYCO2', 'Iran', xWidth, xWidth);
@@ -34,7 +34,7 @@ function updateGraph() {
   lineGDPENERGYCO2('#lineGDPENERGYCO2', 'Turkey', xWidth, xWidth);
   lineGDPENERGYCO2('#lineGDPENERGYCO2', 'Australia', xWidth, xWidth);
   lineGDPENERGYCO2('#lineGDPENERGYCO2', 'Russia', xWidth, xWidth);
-  lineGDPENERGYCO2('#lineGDPENERGYCO2', 'Germany', xWidth, xWidth);
+  lineGDPENERGYCO2('#lineGDPENERGYCO2', 'France', xWidth, xWidth);
   lineGDPENERGYCO2('#lineGDPENERGYCO2', 'United Kingdom', xWidth, xWidth);
   lineGDPENERGYCO2('#lineGDPENERGYCO2', 'China', xWidth, xWidth);
   lineGDPENERGYCO2('#lineGDPENERGYCO2', 'Iran', xWidth, xWidth);
