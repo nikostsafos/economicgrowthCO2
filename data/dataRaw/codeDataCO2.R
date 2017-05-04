@@ -185,7 +185,7 @@ df = spread(df, Variable, Value)
 write.csv(df, '../data2014.csv', row.names = FALSE)
 
 # List of countries for drop-down menu
-countries = factor(unique(df$Country))
-countries = paste0('<option value="', countries, '">Algeria</option>')
-write.csv(countries)
-
+countries = as.data.frame(factor(unique(df$Country)))
+colnames(countries) = 'Country'
+countries$Country = paste0('<option value="', countries$Country, '">', countries$Country, '</option>')
+write.csv(countries, '../countryList.txt', row.names = F)
